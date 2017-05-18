@@ -45,6 +45,7 @@ public class MyApplication extends Application {
 
     @Override
     public void onCreate() {
+
         context = getApplicationContext();
         handler = new Handler();
         mainThread = Thread.currentThread();
