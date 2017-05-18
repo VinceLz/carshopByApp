@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECECEC"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/lay_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent">
+
+        <com.car.contractcar.myapplication.common.ui.EduSohoIconView
+
+            android:id="@+id/text_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/search_style"
+            android:padding="8dp"
+            android:text="@string/search"
+            android:textColor="#998"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!--<ScrollView-->
+        <!--android:id="@+id/sc_test"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentStart="true">-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:orientation="vertical">-->
+            <!-- 车辆列表 -->
+            <ListView
+                android:id="@+id/car_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        <!--</LinearLayout>-->
+    <!--</ScrollView>-->
+</RelativeLayout>

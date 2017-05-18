@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_spec"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context="com.car.contractcar.myapplication.activity.SpecActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- 价格 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/sousuo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="请输入关键字"
+                    android:padding="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="价格"
+                    android:textColor="#444"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <EditText
+                        android:id="@+id/car_minprice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/myedtext_seletor"
+                        android:gravity="center"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:paddingBottom="7dp"
+                        android:paddingTop="7dp"
+                        android:textColorHint="#999" />
+
+                    <View
+                        android:layout_width="30dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="#000" />
+
+                    <EditText
+                        android:id="@+id/car_maxprice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/myedtext_seletor"
+                        android:gravity="center"
+                        android:hint="100万"
+                        android:inputType="number"
+                        android:paddingBottom="7dp"
+                        android:paddingTop="7dp"
+                        android:textColorHint="#999" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <!-- 级别 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="级别"
+                    android:textColor="#444"
+                    android:textSize="18sp" />
+
+                <com.car.contractcar.myapplication.common.ui.MyGridView
+                    android:id="@+id/car_level"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="3"></com.car.contractcar.myapplication.common.ui.MyGridView>
+            </LinearLayout>
+            <!-- 国别 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="国别"
+                    android:textColor="#444"
+                    android:textSize="18sp" />
+
+                <com.car.contractcar.myapplication.common.ui.MyGridView
+                    android:id="@+id/car_countries"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="4"></com.car.contractcar.myapplication.common.ui.MyGridView>
+            </LinearLayout>
+            <!-- 排量 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="排量"
+                    android:textColor="#444"
+                    android:textSize="18sp" />
+
+                <com.car.contractcar.myapplication.common.ui.MyGridView
+                    android:id="@+id/car_displacement"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="4"></com.car.contractcar.myapplication.common.ui.MyGridView>
+            </LinearLayout>
+            <!-- 驱动 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="驱动"
+                    android:textColor="#444"
+                    android:textSize="18sp" />
+
+                <com.car.contractcar.myapplication.common.ui.MyGridView
+                    android:id="@+id/car_drive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="4"></com.car.contractcar.myapplication.common.ui.MyGridView>
+            </LinearLayout>
+            <!-- 燃料 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="燃料"
+                    android:textColor="#444"
+                    android:textSize="18sp" />
+
+                <com.car.contractcar.myapplication.common.ui.MyGridView
+                    android:id="@+id/car_fuel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="4"></com.car.contractcar.myapplication.common.ui.MyGridView>
+            </LinearLayout>
+            <!-- 变速箱 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="变速箱"
+                    android:textColor="#444"
+                    android:textSize="18sp" />
+
+                <com.car.contractcar.myapplication.common.ui.MyGridView
+                    android:id="@+id/car_transmission_case"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="4"></com.car.contractcar.myapplication.common.ui.MyGridView>
+            </LinearLayout>
+            <!-- 生产方式 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="生产方式"
+                    android:textColor="#444"
+                    android:textSize="18sp" />
+
+                <com.car.contractcar.myapplication.common.ui.MyGridView
+                    android:id="@+id/car_production"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="4"></com.car.contractcar.myapplication.common.ui.MyGridView>
+            </LinearLayout>
+            <!-- 结构 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="结构"
+                    android:textColor="#444"
+                    android:textSize="18sp" />
+
+                <com.car.contractcar.myapplication.common.ui.MyGridView
+                    android:id="@+id/car_structure"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="4"></com.car.contractcar.myapplication.common.ui.MyGridView>
+            </LinearLayout>
+            <!-- 座位 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="座位"
+                    android:textColor="#444"
+                    android:textSize="18sp" />
+
+                <com.car.contractcar.myapplication.common.ui.MyGridView
+                    android:id="@+id/car_seat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="4"></com.car.contractcar.myapplication.common.ui.MyGridView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:padding="5dp">
+
+        <Button
+            android:id="@+id/select_ok"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#5396FA"
+            android:padding="5dp"
+            android:text="确定"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+    </LinearLayout>
+</LinearLayout>

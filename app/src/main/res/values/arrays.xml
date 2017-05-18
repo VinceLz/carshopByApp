@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="city">
+        <item>西安</item>
+        <item>北京 </item>
+        <item>杭州</item>
+        <item>咸阳</item>
+    </string-array>
+    <string-array name="service">
+        <item>清洗</item>
+        <item>保养</item>
+        <item>装潢</item>
+    </string-array>
+    <string-array name="condition">
+        <item>离我最近</item>
+    </string-array>
+</resources>

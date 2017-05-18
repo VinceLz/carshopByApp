@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">行吧</string>
+    <string name="icons">&#xe677;</string>
+    <string name="search">&#xe60a; 搜索你想要的车辆</string>
+    <string name="into_text">&#xe627;</string>
+    <string name="fback">&#xe626; 返回</string>
+    <string name="fmore">&#xe601;</string>
+
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载...</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+    <string name="btn_scroll_view">ScrollView demo</string>
+    <string name="btn_list_view">ListView demo</string>
+
+    <string name="header_hint_refresh_normal">Pull to refresh</string>
+    <string name="header_hint_refresh_ready">Release to refresh</string>
+    <string name="header_hint_refresh_loading">Refreshing&#8230;</string>
+    <string name="header_hint_refresh_time">Time：</string>
+    <string name="footer_hint_load_normal">点击/下拉加载更多</string>
+    <string name="footer_hint_load_ready">Release to load more</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+</resources>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="light_blue">@android:color/holo_blue_light</color>
+    <color name="transparent">#00000000</color>
+    <color name="background">#F7F4F0</color>
+    <color name="title_color">#333333</color>
+    <color name="white_color">#ffffffff</color>
+    <color name="fulltransparent">#00ffffff</color>
+    <color name="xingba">#599FAE</color>
+    <color name="alert_dialog_title">#ff2ca9e8</color>
+    <color name="alert_dialog_divi_top">#ff2ca9e8</color>
+    <color name="alert_dialog_divi">#ffe3e5e6</color>
+    <color name="alert_dialog_divi_bottom">#ff494a4c</color>
+    <color name="alert_dialog_content">#ff494a4c</color>
+    <color name="alert_dialog_sub_content">#ff7a7d80</color>
+    <color name="alert_dialog_background">#ffdfe2e6</color>
+    <color name="alert_dialog_pressed">#ffdfe2e6</color>
+    <color name="alert_dialog_button_background">#fff2f2f2</color>
+    <color name="alert_dialog_button_pressed">#ffcdd0d4</color>
+    <color name="alert_dialog_vline">#ffbabcbf</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="mistyrose">#ffe4e1</color>
+    <color name="blue">#3cb4fe</color>
+    <color name="main_gray">#9A9A9A</color>
+    <color name="bg_Gray_light">#EEEEEE</color>
+    <color name="window_background">#EBEBEB</color>
+
+    <color name="honeydew">#f0fff0</color>
+    <color name="bg_Gray">#CCCCCC</color>
+    <color name="tv_Black">#000000</color>
+    <color name="deeppink">#ff1493</color>
+
+    <color name="red">#ff0000</color>
+
+    <color name="lightgrey">#d3d3d3</color>
+    <color name="gainsboro">#dcdcdc</color>
+    <!-- 暗灰色 -->
+    <color name="dimgrey">#696969</color>
+    <color name="dimgrey1">#a6e7e7e7</color>
+    <color name="taobao">#f46a29</color>
+
+    <color name="back_blue">#2f82c8</color>
+    <color name="title_text_color">#ffffff</color>
+    <color name="back_gray">#EDEDED</color>
+    <color name="home_back_unselected">#878787</color>
+    <color name="home_back_selected">#18B4ED</color>
+    <color name="back_white">#ffffff</color>
+    <color name="back_orange">#F37843</color>
+    <color name="btn_gray">#929292</color>
+    <color name="back_gray_light">#E2E2E2</color>
+    <color name="record_green">#19A278</color>
+    <color name="renzhen_green">#99cc99</color>
+    <color name="record_blue">#2582C5</color>
+    <color name="record_red">#D01C4B</color>
+    <color name="bank_blue">#2f82c8</color>
+    <color name="baise">#000000</color>
+    <color name="title_back">#2F83C7</color>
+    <color name="white">#ffffff</color>
+    <color name="back_gray_new">#efefef</color>
+    <color name="black">#000000</color>
+    <color name="view_gray">#d6d6d6</color>
+    <color name="button_gray">#b2b2b2</color>
+    <color name="gray_gray">#ABABAB</color>
+    <color name="home_gray">#66ABABAB</color>
+    <color name="title_text">#26B8EE</color>
+    <color name="province_line_border">#C7C7C7</color>
+    <color name="sel_date_color">#333333</color>
+    <color name="shouyi_red">#EE395F</color>
+    <color name="shouyi_grey">#999999</color>
+
+    <drawable name="transparent_background">#00000000</drawable>
+    <color name="listitem_greenyellow">#ff87b869</color>
+    <color name="title_select_back">#18B4ED</color>
+    <color name="beijing">#F3B600</color>
+    <color name="bg_first_all">#fff78d</color>
+    <color name="bg_first_conent">#43d8ee</color>
+
+    <color name="bg_second_all">#a7e9b9</color>
+    <color name="bg_second_conent">#fff78d</color>
+
+    <color name="bg_thrid_all">#cccccc</color>
+    <color name="bg_thrid_conent">#a7e9b9</color>
+
+    <color name="bg_four_all">#43d8ee</color>
+    <color name="bg_four_conent">#cccccc</color>
+
+
+    <color name="pay_name">#666666</color>
+    <color name="divider">#cccccc</color>
+    <color name="lightblack">#202020</color>
+
+    <color name="text_333333">#333333</color>
+    <color name="text_666666">#666666</color>
+    <color name="text_999999">#666666</color>
+    <color name="text_blue51">#51c6f1</color>
+    <color name="text_redff">#ff0000</color>
+    <color name="text_redee">#ee355c</color>
+
+
+    <color name="inversted_info_color">#ee355c</color>
+
+    <!--bank相关 zuo  -->
+
+    <color name="text_bankname">#666666</color>
+    <color name="text_banknum_default">#999999</color>
+    <color name="text_banknum">#333333</color>
+
+    <!-- 2.4版-->
+    <color name="product_detail_common">#666666</color>
+    <color name="product_red_common">#e84768</color>
+    <color name="product_background">#f1f1f1</color>
+    <color name="divider_line">#e1e1e1</color>
+    <color name="product_info">#333333</color>
+    <color name="product_purchase_bg">#28baed</color>
+    <color name="product_progress_bg">#b1ddf2</color>
+    <color name="product_pprogress">#fff000</color>
+    <drawable name="product_progress_bg">#b1ddf2</drawable>
+    <drawable name="product_pprogress">#fff000</drawable>
+
+    <!-- invest-->
+    <color name="invest_title_bg">#28baed</color>
+
+    <!-- me-->
+    <color name="my_title_bg">#28baed</color>
+    <!-- password-->
+    <drawable name="pass_line">#28baed</drawable>
+
+    <!--shenbei_充值button-->
+    <color name="bg">#ccc</color>
+    <color name="bg_text">#999</color>
+
+
+    <color name="line">#DEE6EB</color>
+</resources>

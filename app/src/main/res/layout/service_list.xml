@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/com.car.contractcar.myapplication.common.ui"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".keepcar.view.KeepCarServiceInfoActivity">
+
+    <ListView
+        android:id="@+id/service_list_no_pay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ListView>
+
+    <com.car.contractcar.myapplication.common.ui.CustomFAB
+        android:id="@+id/jiesuan"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="买单"
+        android:textSize="17sp"
+        android:tint="@android:color/white"
+        custom:bg_color="@color/light_blue" />
+</RelativeLayout>

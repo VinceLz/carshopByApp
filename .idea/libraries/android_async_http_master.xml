@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="android-async-http-master">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/android-async-http-master.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
