@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -25,8 +26,13 @@ import com.car.contractcar.myapplication.common.ui.cityList.Activity01;
 import com.car.contractcar.myapplication.common.utils.Constant;
 import com.car.contractcar.myapplication.common.utils.ImageLoad;
 import com.car.contractcar.myapplication.common.utils.UIUtils;
+import com.car.contractcar.myapplication.keepcar.model.YcOrder;
+import com.car.contractcar.myapplication.keepcar.view.KeepCarServiceInfoActivity;
+import com.car.contractcar.myapplication.keepcar.view.KeepCar_Pay;
+import com.car.contractcar.myapplication.loginandr.activity.LoginActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -77,6 +83,29 @@ public class CarOnlineActivity extends AppCompatActivity implements View.OnClick
     LinearLayout gouche2;
     @BindView(R.id.gouche1)
     LinearLayout gouche1;
+    @BindView(R.id.time1)
+    TextView time1;
+    @BindView(R.id.time2)
+    TextView time2;
+    @BindView(R.id.time3)
+    TextView time3;
+    @BindView(R.id.time4)
+    TextView time4;
+
+    @BindView(R.id.buyway1)
+    TextView buy1;
+    @BindView(R.id.buyway2)
+    TextView buy2;
+    @BindView(R.id.buyway3)
+    TextView buy3;
+    @BindView(R.id.buyway4)
+    TextView buy4;
+
+    @BindView(R.id.fprice_ok)
+    Button fprice_ok;
+
+    String bname = null;
+    Color_MyGridView color_myGridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +119,7 @@ public class CarOnlineActivity extends AppCompatActivity implements View.OnClick
 
     private void initView() {
         Intent intent = getIntent();
+        bname = intent.getStringExtra("bname");
         mid = intent.getIntExtra("mid", 1);
         mname = intent.getStringExtra("mname");
         image = intent.getStringExtra("image");
@@ -98,6 +128,7 @@ public class CarOnlineActivity extends AppCompatActivity implements View.OnClick
             // HttpUtil.picasso.with(context).load(HttpUtil.getImage_path(image)).into(carOnlineCarImg);
             ImageLoad.loadImg(carOnlineCarImg, image);
         }
+        color_myGridView = new Color_MyGridView();
         myGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -138,6 +169,7 @@ public class CarOnlineActivity extends AppCompatActivity implements View.OnClick
         gouche2.setOnClickListener(click);
         gouche3.setOnClickListener(click);
         gouche4.setOnClickListener(click);
+        fprice_ok.setOnClickListener(this);
     }
 
     private void initData() {
@@ -150,7 +182,7 @@ public class CarOnlineActivity extends AppCompatActivity implements View.OnClick
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            myGridView.setAdapter(new Color_MyGridView());
+                            myGridView.setAdapter(color_myGridView);
                         }
                     });
                 } else {
@@ -159,7 +191,7 @@ public class CarOnlineActivity extends AppCompatActivity implements View.OnClick
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            myGridView.setAdapter(new Color_MyGridView());
+                            myGridView.setAdapter(color_myGridView);
                         }
                     });
                 }
@@ -200,24 +232,126 @@ public class CarOnlineActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        goumai1.setBackgroundColor(Color.parseColor("#FFFFFF"));
-        goumai2.setBackgroundColor(Color.parseColor("#FFFFFF"));
-        goumai3.setBackgroundColor(Color.parseColor("#FFFFFF"));
-        goumai4.setBackgroundColor(Color.parseColor("#FFFFFF"));
         switch (v.getId()) {
             case R.id.goumai1:
+                goumai1.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                goumai1.setSelected(false);
+                goumai2.setSelected(false);
+                goumai3.setSelected(false);
+                goumai4.setSelected(false);
+                goumai2.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                goumai3.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                goumai4.setBackgroundColor(Color.parseColor("#FFFFFF"));
                 goumai1.setBackgroundColor(Color.parseColor("#CC8F33"));
+                goumai1.setSelected(true);
                 break;
             case R.id.goumai2:
+                goumai1.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                goumai1.setSelected(false);
+                goumai2.setSelected(false);
+                goumai3.setSelected(false);
+                goumai4.setSelected(false);
+                goumai2.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                goumai3.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                goumai4.setBackgroundColor(Color.parseColor("#FFFFFF"));
                 goumai2.setBackgroundColor(Color.parseColor("#CC8F33"));
+                goumai2.setSelected(true);
                 break;
             case R.id.goumai3:
+                goumai1.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                goumai1.setSelected(false);
+                goumai2.setSelected(false);
+                goumai3.setSelected(false);
+                goumai4.setSelected(false);
+                goumai2.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                goumai3.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                goumai4.setBackgroundColor(Color.parseColor("#FFFFFF"));
                 goumai3.setBackgroundColor(Color.parseColor("#CC8F33"));
+                goumai3.setSelected(true);
                 break;
             case R.id.goumai4:
+                goumai1.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                goumai1.setSelected(false);
+                goumai2.setSelected(false);
+                goumai3.setSelected(false);
+                goumai4.setSelected(false);
+                goumai2.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                goumai3.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                goumai4.setBackgroundColor(Color.parseColor("#FFFFFF"));
                 goumai4.setBackgroundColor(Color.parseColor("#CC8F33"));
+                goumai4.setSelected(true);
+                break;
+            case R.id.fprice_ok:
+                //提交按钮 條用
+                if (Constant.USER == null) {
+                    //没有登陆
+                    Intent i = new Intent(CarOnlineActivity.this, LoginActivity.class);
+                    startActivity(i);
+                } else {
+                    Intent i = new Intent(CarOnlineActivity.this, KeepCar_Pay.class);
+                    List<YcOrder> order = new ArrayList<YcOrder>();
+                    YcOrder yc = new YcOrder();
+                    yc.setMid(mid); //后台会根据mid 查询所有的附属属性
+                    yc.setBuyWay(selectBuyWay());
+                    yc.setBuytime(selectBiyTime());
+                    yc.setPrice(99d);
+                    yc.setCity(city_text.getText().toString());
+                    yc.setCardCity(city_text2.getText().toString());
+                    yc.setColor(color_myGridView.getItem(myGridView.getSelectedItemPosition() + 1).toString())
+                    ;
+                    String sname = "在线订车套餐";
+                    yc.setSname(sname);
+                    yc.setBmname(bname);
+                    order.add(yc);
+                    i.putExtra("orders", (Serializable) order);
+                    i.putExtra("sname", sname);
+                    i.putExtra("bname", bname);
+                    i.putExtra("price", 99D);
+                    startActivity(i);
+                    finish();
+                }
                 break;
         }
+    }
+
+    private String selectBiyTime() {
+        String time = "";
+        if (gouche1.isSelected()) {
+            time = time1.getText().toString();
+        }
+        if (gouche2.isSelected()) {
+            time = time2.getText().toString();
+        }
+        if (gouche3.isSelected()) {
+            time = time3.getText().toString();
+        }
+        if (gouche4.isSelected()) {
+            time = time4.getText().toString();
+        }
+        Log.d("----", "购车时间+" + time);
+        return time;
+    }
+
+    private String selectBuyWay() {
+        String buys = "";
+        if (goumai1.isSelected()) {
+            buys = buy1.getText().toString();
+            Log.d("----", "第一个");
+        }
+        if (goumai2.isSelected()) {
+            buys = buy2.getText().toString();
+            Log.d("----", "第2个");
+        }
+        if (goumai3.isSelected()) {
+            buys = buy3.getText().toString();
+            Log.d("----", "第3个");
+        }
+        if (goumai4.isSelected()) {
+            buys = buy4.getText().toString();
+            Log.d("----", "4个");
+        }
+        Log.d("----", "购车方式+" + buys);
+        return buys;
     }
 
     class Color_MyGridView extends BaseAdapter {
@@ -229,7 +363,7 @@ public class CarOnlineActivity extends AppCompatActivity implements View.OnClick
 
         @Override
         public Object getItem(int position) {
-            return null;
+            return color.get(position);
         }
 
         @Override
@@ -276,6 +410,11 @@ public class CarOnlineActivity extends AppCompatActivity implements View.OnClick
 
         @Override
         public void onClick(View v) {
+            gouche1.setSelected(false);
+            gouche2.setSelected(false);
+            gouche3.setSelected(false);
+            gouche4.setSelected(false);
+
             gouche1.setBackgroundColor(Color.parseColor("#FFFFFF"));
             gouche2.setBackgroundColor(Color.parseColor("#FFFFFF"));
             gouche3.setBackgroundColor(Color.parseColor("#FFFFFF"));
@@ -283,15 +422,19 @@ public class CarOnlineActivity extends AppCompatActivity implements View.OnClick
             switch (v.getId()) {
                 case R.id.gouche1:
                     gouche1.setBackgroundColor(Color.parseColor("#CC8F33"));
+                    gouche1.setSelected(true);
                     break;
                 case R.id.gouche2:
                     gouche2.setBackgroundColor(Color.parseColor("#CC8F33"));
+                    gouche2.setSelected(true);
                     break;
                 case R.id.gouche3:
                     gouche3.setBackgroundColor(Color.parseColor("#CC8F33"));
+                    gouche3.setSelected(true);
                     break;
                 case R.id.gouche4:
                     gouche4.setBackgroundColor(Color.parseColor("#CC8F33"));
+                    gouche4.setSelected(true);
                     break;
             }
         }

@@ -41,7 +41,9 @@ import org.w3c.dom.Text;
 
 import java.math.BigDecimal;
 import java.net.URLDecoder;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
@@ -67,11 +69,10 @@ public class KeepCar_Pay extends AppCompatActivity {
     TextView roll_name;
     String sname;
     double sprice;
-    KeepCarShopInfo keepCarShopInfo;
 
     @BindView(R.id.goods_Send)
     Button goods_Send;
-    int type;
+    String type;
     double currentPrice = -1;//去支付的钱
     RollInfo info;
     @BindView(R.id.id1)
@@ -88,21 +89,27 @@ public class KeepCar_Pay extends AppCompatActivity {
     private GetTnTask getTnTask = null;
     private LoadingDialog dialog = null;
     BroadcastReceiver broadcastReceiver;
+    String url;
+    List<com.car.contractcar.myapplication.keepcar.model.YcOrder> orders;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_keep_car__pay);
         ButterKnife.bind(this);
-        String code = getIntent().getExtras().getString("info");
-        keepCarShopInfo = (KeepCarShopInfo) JsonUtils.json2Bean(code, KeepCarShopInfo.class);
-        Log.d("----", keepCarShopInfo.toString());
-        storeName.setText(keepCarShopInfo.getYcstore().getMbname());
+        String bname = getIntent().getExtras().getString("bname");
+        storeName.setText(bname);
         sprice = getIntent().getExtras().getDouble("price");
         Log.d("----", "我接收到是价格为" + sprice);
         sname = getIntent().getExtras().getString("sname");
+        orders = (List<com.car.contractcar.myapplication.keepcar.model.YcOrder>) getIntent().getExtras().getSerializable("orders");
+        Log.d("----","---"+orders);
         servicePrice.setText("¥" + sprice);
-        type = getIntent().getExtras().getInt("type");
+        type = getIntent().getExtras().getString("type"); //获取种类
+        if (type == null || type.isEmpty()) {
+            //没有传优惠劵type ,则不显示
+            youhuijuan.setVisibility(View.GONE);
+        }
         serverName.setText(sname);
         //处理优惠劵问题
         youhuijuan.setOnClickListener(new View.OnClickListener() {
@@ -144,23 +151,28 @@ public class KeepCar_Pay extends AppCompatActivity {
                     bankId = 999;
                 }
 
+                //封装一个list 集合
                 Map map = new HashMap();
-                map.put("bmname", keepCarShopInfo.getYcstore().getMbname());
                 if (currentPrice == -1) {
-                    map.put("price", sprice);
+                    for (com.car.contractcar.myapplication.keepcar.model.YcOrder ys : orders) {
+                        ys.setPrice(sprice);
+                    }
                 } else {
-                    map.put("price", currentPrice);
+                    for (com.car.contractcar.myapplication.keepcar.model.YcOrder ys : orders) {
+                        ys.setPrice(currentPrice);
+                    }
                 }
                 if (info != null) {
-                    map.put("ruid", info.getRuid());
+                    orders.get(0).setRuid(info.getRuid());
                 }
-                map.put("sname", sname);
-                map.put("mbid", keepCarShopInfo.getYcstore().getMbid());
-                map.put("uid", Constant.USER.getUid());
-                map.put("uname", Constant.USER.getUname());
-                map.put("uphone", Constant.USER.getUphone());
-                map.put("realprice", sprice);
-                HttpUtil.post(Constant.HTTP_BASE + Constant.ORDER_ADD, map, new HttpUtil.callBlack() {
+                map.put("orderList", JsonUtils.bean2Json(orders));
+                Log.d("-----", JsonUtils.bean2Json(orders));
+                if (type != null && !type.isEmpty()) {
+                    url = Constant.HTTP_BASE + Constant.ORDER_ADD;
+                } else {
+                    url = Constant.HTTP_BASE + Constant.ORDER_CAR_ADD;
+                }
+                HttpUtil.post(url, map, new HttpUtil.callBlack() {
                     @Override
                     public void succcess(String code) {
                         String ycorder = JSONObject.parseObject(code).getString("ycorder");

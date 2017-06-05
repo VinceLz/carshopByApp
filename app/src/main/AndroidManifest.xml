@@ -4,6 +4,7 @@
     android:versionCode="111"
     android:versionName="2">
 
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -87,6 +88,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name="com.car.contractcar.myapplication.find.model.Car" />
         <activity
             android:name=".wxapi.WXPayEntryActivity"
             android:exported="true"
@@ -170,10 +172,14 @@
             android:required="false" />
 
         <activity android:name=".activity.FengqiActivity" />
-        <activity
-            android:name=".keepcar.view.Main2Activity"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity android:name=".keepcar.view.keepCarList" />
+        <activity android:name=".user.adapter.MyOrderActivity" />
+        <activity android:name=".user.adapter.MyRoll" />
+        <activity android:name=".user.adapter.SettingActivity" />
+        <activity android:name=".find.model.NewActivity"></activity>
+
+        <service android:name="com.cheshouye.api.client.WeizhangIntentService"></service>
+
     </application>
 
 </manifest>

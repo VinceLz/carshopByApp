@@ -29,7 +29,7 @@ import com.car.contractcar.myapplication.R;
  */
 public class CustomFAB extends Button {
 
-    private static final int RAD = 56;
+    private static final int RAD = 0;
     private Context ctx;
     private int bgColor;
     private int bgColorPressed;
@@ -72,7 +72,7 @@ public class CustomFAB extends Button {
         sd1.setShaderFactory(new ShapeDrawable.ShaderFactory() {
             @Override
             public Shader resize(int width, int height) {
-                LinearGradient lg = new LinearGradient(0, 0, 0, height,
+                LinearGradient lg = new LinearGradient(width, height, width, height,
                         new int[]{
                                 Color.WHITE,
                                 Color.GRAY,
@@ -87,7 +87,6 @@ public class CustomFAB extends Button {
         LayerDrawable ld = new LayerDrawable(new Drawable[]{sd1, sd});
         ld.setLayerInset(0, 5, 5, 0, 0);
         ld.setLayerInset(1, 0, 0, 5, 5);
-
         return ld;
     }
 

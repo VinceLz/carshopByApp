@@ -43,12 +43,14 @@
         </com.jude.rollviewpager.RollPagerView>
 
         <LinearLayout
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#fff"
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/keep1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -65,13 +67,13 @@
                     android:paddingLeft="30dp"
                     android:paddingRight="30dp"
                     android:paddingTop="20dp"
-                    android:src="@mipmap/distributor" />
+                    android:src="@mipmap/keep1" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="5dp"
-                    android:text="经销商"
+                    android:text="养车服务"
                     android:textColor="@android:color/white"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -94,13 +96,13 @@
                     android:paddingLeft="30dp"
                     android:paddingRight="30dp"
                     android:paddingTop="20dp"
-                    android:src="@mipmap/models" />
+                    android:src="@mipmap/keep2" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="5dp"
-                    android:text="选车"
+                    android:text="汽车用品"
                     android:textColor="@android:color/white"
                     android:textSize="14sp" />
             </LinearLayout>

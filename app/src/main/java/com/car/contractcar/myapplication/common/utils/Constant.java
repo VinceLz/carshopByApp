@@ -17,7 +17,7 @@ public class Constant {
     //外网
     public static final String HTTP_BASE = "http://59.110.5.105/carshop/";
     //内网
-    //   public static final String HTTP_BASE = "http://172.16.120.65:8080/carshop/";
+    //  public static final String HTTP_BASE = "http://172.16.120.65:8080/carshop/";
     public static final String HTTP_HOME = "home.action";
     public static final String HTTP_KEEP_CAR = "/ycstore/home.action";
     public static final String HTTP_KEEP_CAR_SHOP_INFO = "/ycstore/get.action?mbid=";
@@ -43,8 +43,17 @@ public class Constant {
     public static final String ORDER_ADD = "/ycorder/add.action";
     public static final String PAY = "/ycorder/payment.action";
     public static final String BACK = "/ycorder/sblack.action";
+    public static final String QUERY_LIST = "/ycstore/query.action";
+    public static final String ORDER_CAR_ADD = "/order/up.action";
+    public static final String MY_ORDER = "/order/myOrder.action";
+    public static final String HTTP_CAR_ROLL = "/roll/getall.action";
+    public static final String USER_LOGOUT = "/user/logout.action";
+    public static final String NEW_CATALOG = "/new/getCatalog.action";
+    public static final String NEW_GETALL = "/new/getAll.action";
+    public static final String NEW_CONTENT = "/new/get.action";
     public static YcOrder CURRENT_ORDER = null;
     public static User USER = null;
     public static Intent intent = new Intent(Intent.ACTION_CALL);
 
+    public static String New_ZAN = "/new/zanAdd.action";
 }

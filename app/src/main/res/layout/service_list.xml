@@ -5,19 +5,21 @@
     android:layout_height="match_parent"
     tools:context=".keepcar.view.KeepCarServiceInfoActivity">
 
+    <com.car.contractcar.myapplication.common.ui.CustomFAB
+        android:id="@+id/jiesuan"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="面付"
+        android:textSize="14sp"
+        android:tint="@android:color/white"
+        custom:bg_color="@color/light_blue" />
+
     <ListView
         android:id="@+id/service_list_no_pay"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
-
-    <com.car.contractcar.myapplication.common.ui.CustomFAB
-        android:id="@+id/jiesuan"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:text="买单"
-        android:textSize="17sp"
-        android:tint="@android:color/white"
-        custom:bg_color="@color/light_blue" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"></ListView>
 </RelativeLayout>

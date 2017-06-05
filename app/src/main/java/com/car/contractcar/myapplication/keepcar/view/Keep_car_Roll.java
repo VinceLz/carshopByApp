@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
@@ -18,6 +19,7 @@ import com.car.contractcar.myapplication.common.utils.DateUtil;
 import com.car.contractcar.myapplication.common.utils.JsonUtils2;
 import com.car.contractcar.myapplication.keepcar.Adapter.Roll_ListView_Adapter;
 import com.car.contractcar.myapplication.keepcar.bean.RollInfo;
+import com.car.contractcar.myapplication.user.adapter.Roll_ListView_AdapterShow;
 
 import java.util.HashMap;
 import java.util.List;
@@ -28,8 +30,8 @@ import butterknife.ButterKnife;
 
 public class Keep_car_Roll extends AppCompatActivity {
     @BindView(R.id.roll_list)
-    MyListView roll_list;
-    int type;
+    ListView roll_list;
+    String type;
     Roll_ListView_Adapter roll_listView_adapter;
     double price;
     List<RollInfo> rollsList;
@@ -39,12 +41,11 @@ public class Keep_car_Roll extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_keep_car__roll);
         ButterKnife.bind(this);
-        type = getIntent().getExtras().getInt("type");
+        type = getIntent().getExtras().getString("type");
         price = getIntent().getExtras().getDouble("price");
         roll_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d("----", "lsit item被单击");
                 RollInfo rollInfo = rollsList.get(position);
                 if (price < rollInfo.getCondition() || !DateUtil.compTo(rollInfo.getPastdate(), 0)) {
                     return;
@@ -56,6 +57,7 @@ public class Keep_car_Roll extends AppCompatActivity {
                 finish();
             }
         });
+        roll_list.setEmptyView(findViewById(R.id.layout_empty));
         initData();
     }
 

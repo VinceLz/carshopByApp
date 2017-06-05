@@ -30,30 +30,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
-        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-appindexing-8.4.0_292c4884a5695c86cc6cdbbcb2672a11ddafec1d.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.3"
         sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
         <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.0_de2506f8c0cb9db0c15305e83fb67bd11e1bc09b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.jude\rollviewpager\1.2.9\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="9229a89cbb43d66d573e975cc3fdab425bec4372">
-        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\com.jude-rollviewpager-1.2.9_b7b48491b097b34b20a5f48bb11362ce34d15394.jar" />
     </item>
     <item
         is-multidex="false"
@@ -93,30 +75,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\xingba\MyApplication2\app\libs\jackson-core-2.4.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="ceb72830d95c512b4b300a38f29febc85bdf6e4b">
-        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\jackson-core-2.4.2_0cc80247f10c036434870abd21cb6e6466dfd923.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.3"
         sha1="c755536e5a100d9c76c8ea0b72f76c018f7a9de2">
         <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-24.2.0_1165a370c26bfa6ef04e13fd74996b661eb20475.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
-        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.0_42ca8d1c104e3847f8e7b4abfb4bafafbdb2ab46.jar" />
     </item>
     <item
         is-multidex="false"
@@ -138,30 +102,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\libs\internal_impl-24.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
-        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_d619e3d8695be37616d90b9e8969fbe762703522.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.3"
         sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
         <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.0_cb58d7194d31de6a93609baefb5d05601eef863f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\libs\internal_impl-24.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
-        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_008a6347d2bf5692e091b3376d877d48e53ed2c7.jar" />
     </item>
     <item
         is-multidex="false"
@@ -174,30 +120,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\MyApplication2\library\unspecified\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="348d75431a50e1c13cc056a6019ca6b0953a60ab">
-        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\MyApplication2-library-unspecified_be8329d1534a98bc129c1288532b592beba2ca74.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.3"
         sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
         <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.0_54a362876293d7b1c6bfba16d7bd4658f96bd884.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_2428dbd5eabf65ae69bc01abd6e4b72d08e545aa.jar" />
     </item>
     <item
         is-multidex="false"
@@ -237,15 +165,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\xingba\MyApplication2\app\libs\fastjson-1.2.4.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="fbcf8415e32859b473b336e5ac6422ee69b1185b">
-        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\fastjson-1.2.4_ccf2009fe027c170d03d9f4d4eb6720898087045.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-okhttp3\0.12.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -255,30 +174,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline\0.12.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="145da27a459a63ea0c4e318930365cf0a8b8e891">
-        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-0.12.0_f643cb211eaef9e134d77c9fcb7549d954b39c3e.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\xingba\MyApplication2\app\libs\android-async-http-master.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.3"
         sha1="9f4e928be607675a16f5045ebac582d874692698">
         <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\android-async-http-master_727d543ff0e9f9ef1d7a7ebc482ea44550f8a0e4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
-        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-8.4.0_b9a1fccb6d3c7f2307730b36703e959df400ddec.jar" />
     </item>
     <item
         is-multidex="false"
@@ -300,21 +201,183 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.jakewharton\butterknife\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="a07818a1ecabdb149998823429cce555af4b9cba">
-        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\com.jakewharton-butterknife-8.4.0_240e243981ca96e95590e413d813f70407e14bda.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\xingba\MyApplication2\app\libs\pinyin4j-2.5.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.3"
         sha1="ae353005f973da1cd8545b54354504c2503f6865">
         <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\pinyin4j-2.5.0_8ba7d90bbdc7ecec6045e6a208e7e08487b77a60.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\xingba\MyApplication2\app\libs\EzfMpPlugin.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ba361c321c162abad696cd19f57f6494950f0033">
+        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\EzfMpPlugin_e9c8bf7e504464b11e3ad503834712ef7b17332f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
+        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_903f3592130c5aa7fea4a5887a8ee6dca16ed091.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
+        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.0_5d4dfa6dba14eeb6656d2fa92f6efe78ea128357.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\library-2.4.0_dd460f45d27a359687729c3c169358b1eda3100b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\xingba\MyApplication2\app\libs\jackson-annotations-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d6a66c7a5f01cf500377bd669507a08cfeba882a">
+        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\jackson-annotations-2.4.0_06aa9f5fcddf9ef989afaec6bfd40b3d3867672d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\xingba\MyApplication2\app\libs\pinyin4android1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7e40ba730db63df392311604fcd958abc61e34fe">
+        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\pinyin4android1.0_b05e0a235140ae68086437316a66c75eeebc7aa7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
+        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-appindexing-8.4.0_292c4884a5695c86cc6cdbbcb2672a11ddafec1d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.jude\rollviewpager\1.2.9\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9229a89cbb43d66d573e975cc3fdab425bec4372">
+        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\com.jude-rollviewpager-1.2.9_b7b48491b097b34b20a5f48bb11362ce34d15394.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\xingba\MyApplication2\app\libs\jackson-core-2.4.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ceb72830d95c512b4b300a38f29febc85bdf6e4b">
+        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\jackson-core-2.4.2_0cc80247f10c036434870abd21cb6e6466dfd923.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
+        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.0_42ca8d1c104e3847f8e7b4abfb4bafafbdb2ab46.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.flipboard\bottomsheet-core\1.5.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c6e7e4c64dd7f005a6d2b6d6753dd2ac20c71389">
+        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\com.flipboard-bottomsheet-core-1.5.1_cdb4b50f7f6cbfc8361aac4fa8587bdf160b70bf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
+        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_d619e3d8695be37616d90b9e8969fbe762703522.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
+        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_008a6347d2bf5692e091b3376d877d48e53ed2c7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_2428dbd5eabf65ae69bc01abd6e4b72d08e545aa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\se.emilsjolander\stickylistheaders\2.7.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="3bdf77dbe58e0ec53a0178de532372e7c00859b9">
+        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\se.emilsjolander-stickylistheaders-2.7.0_a31813a8581e36588415be33417efe094c880a73.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\xingba\MyApplication2\app\libs\fastjson-1.2.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fbcf8415e32859b473b336e5ac6422ee69b1185b">
+        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\fastjson-1.2.4_ccf2009fe027c170d03d9f4d4eb6720898087045.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline\0.12.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="145da27a459a63ea0c4e318930365cf0a8b8e891">
+        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-0.12.0_f643cb211eaef9e134d77c9fcb7549d954b39c3e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-8.4.0_b9a1fccb6d3c7f2307730b36703e959df400ddec.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.jakewharton\butterknife\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a07818a1ecabdb149998823429cce555af4b9cba">
+        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\com.jakewharton-butterknife-8.4.0_240e243981ca96e95590e413d813f70407e14bda.jar" />
     </item>
     <item
         is-multidex="false"
@@ -336,15 +399,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\xingba\MyApplication2\app\libs\EzfMpPlugin.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="ba361c321c162abad696cd19f57f6494950f0033">
-        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\EzfMpPlugin_e9c8bf7e504464b11e3ad503834712ef7b17332f.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -360,24 +414,6 @@
         revision="23.0.3"
         sha1="045be695d968dd707691cc55d23746dbf8cf569a">
         <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_c71b146aac4ab63643bf27a01363d43498c9649a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\libs\internal_impl-24.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
-        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_903f3592130c5aa7fea4a5887a8ee6dca16ed091.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\xingba\MyApplication2\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
-        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.0_5d4dfa6dba14eeb6656d2fa92f6efe78ea128357.jar" />
     </item>
     <item
         is-multidex="false"
@@ -432,33 +468,6 @@
         revision="23.0.3"
         sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
         <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.0_3a04f9a6452c150ce2fb045e35c74c9ae8075ef2.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\library-2.4.0_dd460f45d27a359687729c3c169358b1eda3100b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\xingba\MyApplication2\app\libs\jackson-annotations-2.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="d6a66c7a5f01cf500377bd669507a08cfeba882a">
-        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\jackson-annotations-2.4.0_06aa9f5fcddf9ef989afaec6bfd40b3d3867672d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\xingba\MyApplication2\app\libs\pinyin4android1.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="7e40ba730db63df392311604fcd958abc61e34fe">
-        <dex dex="D:\xingba\MyApplication2\app\build\intermediates\pre-dexed\debug\pinyin4android1.0_b05e0a235140ae68086437316a66c75eeebc7aa7.jar" />
     </item>
 
 </items>

@@ -123,9 +123,9 @@ public class HttpUtil {
     //默认图磁盘缓存的最大值
     private static final int MAX_DISK_CACHE_SIZE = 100 * ByteConstants.MB;
     //小图所放路径的文件夹名
-    private static final String IMAGE_PIPELINE_SMALL_CACHE_DIR = "ImagePipelineCacheSmall";
+    public static final String IMAGE_PIPELINE_SMALL_CACHE_DIR = "ImagePipelineCacheSmall";
     //默认图所放路径的文件夹名
-    private static final String IMAGE_PIPELINE_CACHE_DIR = "ImagePipelineCacheDefault";
+    public static final String IMAGE_PIPELINE_CACHE_DIR = "ImagePipelineCacheDefault";
 
 
     public static ImagePipelineConfig getDefaultImagePipelineConfig(Context context) {

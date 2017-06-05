@@ -59,5 +59,26 @@ public class AppUtil {
             return false;
         }
     }
+
+    public static boolean openMapByjiaYou(Context context, String latitude, String longitude, String query) {
+        Intent intent3 = null;
+        if (AppUtil.isAvilible(context, "com.autonavi.minimap")) {
+            intent3 = new Intent();
+
+            intent3.setAction("android.intent.action.VIEW");
+            intent3.setData(Uri.parse("androidamap://poi?sourceApplication=xingba&keywords=" + query + "&dev=0"));
+            intent3.setFlags(FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent3);
+            return true;
+        } else if (AppUtil.isAvilible(context, "com.baidu.BaiduMap")) {
+            intent3 = new Intent();
+            intent3.setData(Uri.parse("baidumap://map/place/search?query=" + query + "&location=" + latitude + "," + latitude + "&radius=5000&bounds=37.8608310000,112.5963090000,42.1942670000,118.9491260000"));
+            intent3.setFlags(FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent3);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 

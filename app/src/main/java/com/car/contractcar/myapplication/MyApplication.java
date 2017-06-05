@@ -1,31 +1,19 @@
 package com.car.contractcar.myapplication;
 
 import android.app.Application;
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Environment;
 import android.os.Handler;
 import android.util.Log;
-import android.view.Display;
 
 import com.alibaba.fastjson.JSON;
 import com.car.contractcar.myapplication.activity.MainActivity;
 import com.car.contractcar.myapplication.common.http.HttpUtil;
-import com.car.contractcar.myapplication.common.utils.CommentUtil;
 import com.car.contractcar.myapplication.common.utils.Constant;
 import com.car.contractcar.myapplication.common.utils.UIUtils;
-import com.car.contractcar.myapplication.fragment.BuycarFragment2;
 import com.car.contractcar.myapplication.loginandr.bean.User;
-import com.facebook.drawee.backends.pipeline.Fresco;
-import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.tencent.bugly.Bugly;
 import com.tencent.bugly.beta.Beta;
-import com.tencent.bugly.crashreport.CrashReport;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Map;
 
 
 /**
@@ -39,20 +27,24 @@ public class MyApplication extends Application {
 
     public static Thread mainThread = null;
 
-
+    public static MyApplication app;
     public static int mainThreadId = 0;
 
 
     @Override
     public void onCreate() {
-
         context = getApplicationContext();
+        app = this;
         handler = new Handler();
         mainThread = Thread.currentThread();
         mainThreadId = android.os.Process.myTid();
         new HttpUtil(this);//加载okhttp &  图片加载
         initUser();
         initErrorLog();
+    }
+
+    public static MyApplication getInst() {
+        return app;
     }
 
     public void initErrorLog() {
@@ -113,4 +105,6 @@ public class MyApplication extends Application {
         }
 
     }
+
+
 }

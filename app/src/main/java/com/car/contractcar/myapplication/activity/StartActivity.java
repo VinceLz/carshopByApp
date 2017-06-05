@@ -17,6 +17,8 @@ import com.car.contractcar.myapplication.loginandr.bean.User;
 
 import org.w3c.dom.Text;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class StartActivity extends AppCompatActivity {
 
     @Override

@@ -233,6 +233,8 @@ public class CarDetailActivity extends AppCompatActivity {
         intent.putExtra("mid", car.getMid());
         intent.putExtra("mname", car.getMname());
         intent.putExtra("image", car.getMimage().get(0));
+        intent.putExtra("bname", bname);
+        //讲信息发送过去
         startActivity(intent);
         //    右往左推出效果
         overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);

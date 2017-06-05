@@ -7,7 +7,7 @@
     android:padding="5dp">
 
     <LinearLayout
-        android:id="@+id/no_pay_desc"
+        android:id="@+id/desc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -36,6 +36,7 @@
             android:text="服务"
             android:textColor="#000"
             android:textSize="14sp" />
+
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -67,11 +68,53 @@
                 android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1"
         android:gravity="right"
-        android:paddingRight="20dp"></LinearLayout>
+        android:paddingRight="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/tvPrice"
+            android:gravity="right">
+
+            <TextView
+                android:id="@+id/tvMinus"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@mipmap/button_minus"
+                android:clickable="true"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:minWidth="20dp"
+                android:text="1221"
+                android:textColor="@color/record_red"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvAdd"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@mipmap/button_add"
+                android:clickable="true"
+                android:gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

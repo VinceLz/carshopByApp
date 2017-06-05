@@ -33,6 +33,18 @@
                     app:civ_border_width="1dp" />
 
                 <TextView
+                    android:id="@+id/user_denglu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="10dp"
+                    android:text="登陆/注册"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/car"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="5dp"
@@ -42,11 +54,14 @@
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/model"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1.5T 自动 至尊版"
                     android:textColor="#fff"
                     android:textSize="12sp" />
+
+
             </LinearLayout>
 
 

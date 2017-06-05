@@ -23,4 +23,11 @@
     <string name="footer_hint_load_ready">Release to load more</string>
     <string name="title_activity_main2">Main2Activity</string>
 
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="errcode_success">发送成功</string>
+    <string name="errcode_cancel">发送取消</string>
+    <string name="errcode_deny">发送被拒绝</string>
+    <string name="errcode_unknown">发送返回</string>
+    <string name="title_activity_strart">StrartActivity</string>
 </resources>

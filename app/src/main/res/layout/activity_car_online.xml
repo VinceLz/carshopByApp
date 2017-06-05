@@ -193,6 +193,7 @@
                         android:paddingTop="3dp">
 
                         <TextView
+                            android:id="@+id/buyway1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
@@ -216,6 +217,7 @@
 
 
                         <TextView
+                            android:id="@+id/buyway2"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
@@ -236,9 +238,8 @@
                         android:orientation="horizontal"
                         android:paddingBottom="3dp"
                         android:paddingTop="3dp">
-
-
                         <TextView
+                            android:id="@+id/buyway3"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
@@ -261,6 +262,7 @@
                         android:paddingTop="3dp">
 
                         <TextView
+                            android:id="@+id/buyway4"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
@@ -306,7 +308,7 @@
                         android:paddingTop="3dp">
 
                         <TextView
-                            android:id="@+id/c2ar2_color1_text"
+                            android:id="@+id/time1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
@@ -330,7 +332,7 @@
 
 
                         <TextView
-                            android:id="@+id/c2a2r_color1_text"
+                            android:id="@+id/time2"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
@@ -354,6 +356,7 @@
 
 
                         <TextView
+                            android:id="@+id/time3"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
@@ -376,7 +379,7 @@
                         android:paddingTop="3dp">
 
                         <TextView
-                            android:id="@+id/ddd"
+                            android:id="@+id/time4"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"

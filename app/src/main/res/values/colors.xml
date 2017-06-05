@@ -53,6 +53,14 @@
     <color name="record_green">#19A278</color>
     <color name="renzhen_green">#99cc99</color>
     <color name="record_blue">#2582C5</color>
+
+    <color name="popup_main_background">#b0000000</color>
+    <color name="choose_eara_item_press_color">#f4f4f4</color>
+    <color name="no_color">#00000000</color>
+
+    <color name="normal_orange">#ff6633</color>
+    <color name="silverGray">#c7c7c7</color>
+    <color name="normal_bg_color">#f0f0f0</color>
     <color name="record_red">#D01C4B</color>
     <color name="bank_blue">#2f82c8</color>
     <color name="baise">#000000</color>
@@ -133,4 +141,6 @@
 
 
     <color name="line">#DEE6EB</color>
+    <color name="driver_line">#cccccc</color>
+    <color name="mode_night_green">#8dd816</color>
 </resources>

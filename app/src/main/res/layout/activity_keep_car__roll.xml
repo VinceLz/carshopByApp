@@ -11,7 +11,6 @@
         android:background="#39A5B7"
         android:orientation="horizontal"
         android:padding="10dp">
-
         <ImageView
             android:id="@+id/iv_back"
             android:layout_width="0dp"
@@ -31,19 +30,22 @@
             android:textSize="18sp" />
     </LinearLayout>
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:scrollbars="none">
+        android:orientation="vertical">
 
-        <com.car.contractcar.myapplication.keepcar.view.MyListView
+        <ListView
             android:id="@+id/roll_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:dividerHeight="15dp"></com.car.contractcar.myapplication.keepcar.view.MyListView>
+            android:dividerHeight="15dp"></ListView>
 
-
-    </ScrollView>
-
+        <include
+            android:id="@+id/layout_empty"
+            layout="@layout/listview_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+    </LinearLayout>
 </LinearLayout>

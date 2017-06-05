@@ -6,9 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ececec"
-    android:orientation="vertical"
-    tools:context="com.car.contractcar.myapplication.keepcar.view.KeepCarServiceInfoActivity">
-
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -190,16 +188,90 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:background="#ffffff"
         app:tabIndicatorColor="#ff0000"
         app:tabSelectedTextColor="#FF0000"
         app:tabTextColor="@color/black" />
-
-
     <!--可滑动的布局内容-->
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp_view"
+
+    <com.flipboard.bottomsheet.BottomSheetLayout
+        android:id="@+id/bottomSheetLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0" />
+
+            <LinearLayout
+                android:id="@+id/bottom"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:background="#aa000000"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:onClick="onClick"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imgCart"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/icon_cart" />
+
+                    <TextView
+                        android:id="@+id/tvCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/circle_red"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="#fff"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvCost"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="￥ 0"
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/tvSubmit"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:background="#22c222"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:text="去结算"
+                    android:textColor="#fff"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.flipboard.bottomsheet.BottomSheetLayout>
 </LinearLayout>

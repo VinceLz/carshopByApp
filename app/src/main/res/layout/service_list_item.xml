@@ -37,6 +37,7 @@
             android:textColor="#000"
             android:textSize="14sp" />
 
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -76,16 +77,44 @@
         android:gravity="right"
         android:paddingRight="20dp">
 
-        <Button
-            android:id="@+id/pay_bel"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:background="@drawable/pay_button"
-            android:gravity="center"
-            android:padding="5dp"
-            android:text="买单"
-            android:textColor="@color/baise"
-            android:textSize="17sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/tvPrice"
+            android:gravity="right">
+
+            <TextView
+                android:id="@+id/tvMinus"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@mipmap/button_minus"
+                android:clickable="true"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:minWidth="20dp"
+                android:text="1221"
+                android:textColor="@color/record_red"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvAdd"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@mipmap/button_add"
+                android:clickable="true"
+                android:gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -1,82 +1,109 @@
 package com.car.contractcar.myapplication.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.baidu.location.BDLocation;
 import com.car.contractcar.myapplication.R;
 import com.car.contractcar.myapplication.activity.MainActivity;
+import com.car.contractcar.myapplication.common.ui.LoadingDialog;
 import com.car.contractcar.myapplication.common.ui.LoadingPage;
+import com.car.contractcar.myapplication.common.ui.MyGridView;
+import com.car.contractcar.myapplication.common.utils.AppUtil;
 import com.car.contractcar.myapplication.common.utils.Constant;
-import com.car.contractcar.myapplication.common.utils.ImageLoad;
-import com.car.contractcar.myapplication.common.utils.JsonUtils;
 import com.car.contractcar.myapplication.common.utils.UIUtils;
-import com.car.contractcar.myapplication.entity.BuyCarIndex2;
-import com.facebook.drawee.view.SimpleDraweeView;
-import com.hanks.htextview.HTextView;
-import com.jude.rollviewpager.RollPagerView;
-import com.jude.rollviewpager.adapter.StaticPagerAdapter;
+import com.car.contractcar.myapplication.common.utils.Utils;
+import com.car.contractcar.myapplication.find.model.Car;
+import com.car.contractcar.myapplication.find.model.Catalog;
+import com.car.contractcar.myapplication.find.model.ColumnHorizontalScrollView;
+import com.car.contractcar.myapplication.find.model.NewsFragment;
+import com.car.contractcar.myapplication.find.model.NewsFragmentPagerAdapter;
 import com.loopj.android.http.RequestParams;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.zip.Inflater;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.car.contractcar.myapplication.MyApplication.context;
 
+
 /**
  * Created by macmini2 on 16/11/5.
  */
 
 public class FindFragment extends Fragment {
-    @BindView(R.id.findtest)
-    ListView findtest;
 
-    private BuyCarIndex2 buyCArIndex2;
-    private List<BuyCarIndex2.HomeImageBean> homeImage;
-    private List<BuyCarIndex2.CarstoreBean> homeCarstore;
-    private List<BuyCarIndex2.HomeActiveBean> homeActive;
     private LoadingPage loadingPage;
-    private int statusBarHeight2;
-    private static int count = 0;
-    private boolean isContinue;
-    private RollPagerView mRollViewPager;
     private BDLocation bdLocation;
-    private Thread myThread;
-    private Handler handler = new Handler() {
-        public void handleMessage(android.os.Message msg) {
-            if (msg.what == 0) {
-                hTextView.animateText(homeActive.get(count % homeActive.size()).getTitle());
-                count++;
-                handler.sendEmptyMessageDelayed(0, 2000);
-            }
-        }
+
+    @BindView(R.id.mColumnHorizontalScrollView)
+    ColumnHorizontalScrollView mColumnHorizontalScrollView; // 自定义HorizontalScrollView
+    @BindView(R.id.mRadioGroup_content)
+    LinearLayout mRadioGroup_content; // 每个标题
+    @BindView(R.id.ll_more_columns)
+    LinearLayout ll_more_columns; // 右边+号的父布局
+
+    ImageView button_more_columns; // 标题右边的+号
+
+    final static int CHANNELREQUEST = 1; // 请求码
+    final static int CHANNELRESULT = 10; // 返回码
+    int columnSelectIndex = 0; // 当前选中的栏目索引
+    ArrayList<Catalog> userChannelList;
+    int mScreenWidth = 0; // 屏幕宽度
+    int mItemWidth = 0; // Item宽度：每个标题的宽度
+    @BindView(R.id.mViewPager)
+    ViewPager mViewPager;
+    // ArrayList<Fragment> fragments = new ArrayList<Fragment>();
+    NewsFragment newfragment;
+    @BindView(R.id.shade_left)
+    ImageView shade_left; // 左阴影部分
+    @BindView(R.id.shade_right)
+    ImageView shade_right; // 右阴影部分
+    @BindView(R.id.rl_column)
+    RelativeLayout rl_column; // +号左边的布局：包括HorizontalScrollView和左右阴影部分;
+    public static LoadingDialog loadingDialog = null;
+    @BindView(R.id.app)
+    MyGridView gridView;
+    MyGrid myGrid;
+    String[] app = {"违章查询", "附近加油"};
+    int[] app_ioc = {R.mipmap.timg2, R.mipmap.jiayou
+
     };
-    private HTextView hTextView;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         MainActivity activity = (MainActivity) getActivity();
         bdLocation = MainActivity.bdLocation;
+        mScreenWidth = Utils.getWindowsWidth(getActivity());
+        mItemWidth = mScreenWidth / 7;
+        loadingDialog = new LoadingDialog(getContext(), "加载中...");
         loadingPage.show();
-
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, final Bundle savedInstanceState) {
         loadingPage = new LoadingPage(getActivity()) {
             @Override
             public int LayoutId() {
@@ -87,26 +114,37 @@ public class FindFragment extends Fragment {
             protected void OnSuccess(ResultState resultState, View successView) {
                 ButterKnife.bind(FindFragment.this, successView);
                 if (!TextUtils.isEmpty(resultState.getContent())) {
-                    buyCArIndex2 = (BuyCarIndex2) JsonUtils.json2Bean(resultState.getContent(), BuyCarIndex2.class);
-                    initView();
-                    refreshView();
+                    String list = JSONObject.parseObject(resultState.getContent()).getString("list");
+                    final List<Catalog> catalogs = JSON.parseArray(list, Catalog.class);
+                    if (catalogs != null) {
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                userChannelList = (ArrayList<Catalog>) catalogs;
+                                initView();
+                                refreshView();
+                            }
+                        });
+                    } else {
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(getContext(), "出错了", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                        return;
+                    }
                 }
             }
 
             @Override
             protected RequestParams params() {
-
                 return null;
             }
 
             @Override
             protected String url() {
-                if (bdLocation != null) {
-                    return Constant.HTTP_BASE + Constant.HTTP_HOME + "?longitude=" + bdLocation.getLongitude() + "&latitude=" + bdLocation.getLatitude();
-                } else {
-                    return Constant.HTTP_BASE + Constant.HTTP_HOME;
-                }
-
+                return Constant.HTTP_BASE + Constant.NEW_CATALOG;
             }
         };
 
@@ -116,12 +154,69 @@ public class FindFragment extends Fragment {
 
 
     private void initView() {
-        View xmlView = UIUtils.getXmlView(R.layout.test);
-        hTextView = (HTextView) xmlView.findViewById(R.id.htext);
-        mRollViewPager = (RollPagerView) xmlView.findViewById(R.id.view_pages_carousel);
-        findtest.addHeaderView(xmlView);
+        myGrid = new MyGrid();
+        gridView.setAdapter(myGrid);
+        initTabColumn();
+        initFragment();
+    }
 
+    /**
+     * 初始化Fragment
+     */
+    private void initFragment() {
+        //  fragments.clear();//清空
+//        int count = userChannelList.size();
+//        for (int i = 0; i < count; i++) {
+        newfragment = new NewsFragment(userChannelList.get(0).getCatid());
+        //  fragments.add(newfragment);
+        //   }
+        NewsFragmentPagerAdapter mAdapetr = new NewsFragmentPagerAdapter(getFragmentManager(), newfragment);
+        mViewPager.setAdapter(mAdapetr);
+        mViewPager.addOnPageChangeListener(pageListener);
+    }
 
+    /**
+     * 初始化Column栏目项
+     */
+    private void initTabColumn() {
+        mRadioGroup_content.removeAllViews();
+        int count = userChannelList.size();
+        mColumnHorizontalScrollView.setParam(getActivity(), mScreenWidth, mRadioGroup_content, shade_left, shade_right, ll_more_columns, rl_column);
+        for (int i = 0; i < count; i++) {
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(mItemWidth, ViewGroup.LayoutParams.WRAP_CONTENT);
+            params.leftMargin = 5;
+            params.rightMargin = 5;
+            TextView columnTextView = new TextView(getActivity());
+            columnTextView.setGravity(Gravity.CENTER);
+            columnTextView.setPadding(5, 5, 5, 5);
+            columnTextView.setId(userChannelList.get(i).getCatid());
+            columnTextView.setText(userChannelList.get(i).getCname());
+            columnTextView.setTextColor(getResources().getColorStateList(R.color.top_category_scroll_text_color_day));
+            if (columnSelectIndex == i) {
+                columnTextView.setSelected(true);
+            }
+            // 单击监听
+            columnTextView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    loadingDialog.show();
+                    for (int i = 0; i < mRadioGroup_content.getChildCount(); i++) {
+                        View localView = mRadioGroup_content.getChildAt(i);
+                        if (localView != v) {
+                            localView.setSelected(false);
+                        } else {
+                            localView.setSelected(true);
+                            mViewPager.setCurrentItem(i);
+                        }
+                    }
+
+                    newfragment.update(v.getId());
+                    // Toast.makeText(getActivity(), v.getId() + "", Toast.LENGTH_SHORT).show();
+                    //在这触发
+                }
+            });
+            mRadioGroup_content.addView(columnTextView, i, params);
+        }
     }
 
 
@@ -129,48 +224,67 @@ public class FindFragment extends Fragment {
      * 刷新UI
      */
     private void refreshView() {
-        if (buyCArIndex2 != null) {
-            handler.sendEmptyMessage(0);
-            //设置适配器
-            homeImage = buyCArIndex2.getHomeImage();
-            homeCarstore = buyCArIndex2.getCarstore();
-            homeActive = buyCArIndex2.getHomeActive();
-
-            mRollViewPager.setAdapter(new StaticPagerAdapter() {
-
-                @Override
-                public View getView(ViewGroup container, int position) {
-                    SimpleDraweeView imageView = new SimpleDraweeView(container.getContext());
-
-                    imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                    imageView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-                    ImageLoad.loadImg(imageView, homeImage.get(position).getImage());
-                    return imageView;
-                }
-
-                @Override
-                public int getCount() {
-                    return homeImage.size();
-                }
-            });
-            findtest.setAdapter(new MyListAdapter());
-
-        }
 
     }
 
+
     /**
-     * listView的适配器
+     * ViewPager切换监听方法
      */
-    class MyListAdapter extends BaseAdapter {
+    public ViewPager.OnPageChangeListener pageListener = new ViewPager.OnPageChangeListener() {
+
+        @Override
+        public void onPageScrollStateChanged(int arg0) {
+        }
+
+        @Override
+        public void onPageScrolled(int arg0, float arg1, int arg2) {
+        }
+
+        @Override
+        public void onPageSelected(int position) {
+            Log.d("----", "触发了3");
+            mViewPager.setCurrentItem(position);
+            selectTab(position);
+        }
+    };
+
+    /**
+     * 选择的Column里面的Tab
+     */
+    private void selectTab(int tab_postion) {
+        columnSelectIndex = tab_postion;
+        for (int i = 0; i < mRadioGroup_content.getChildCount(); i++) {
+            View checkView = mRadioGroup_content.getChildAt(tab_postion);
+            int k = checkView.getMeasuredWidth();
+            int l = checkView.getLeft();
+            int i2 = l + k / 2 - mScreenWidth / 2;
+            mColumnHorizontalScrollView.smoothScrollTo(i2, 0);
+        }
+        //判断是否选中
+        for (int j = 0; j < mRadioGroup_content.getChildCount(); j++) {
+            View checkView = mRadioGroup_content.getChildAt(j);
+            boolean ischeck;
+            if (j == tab_postion) {
+                ischeck = true;
+            } else {
+                ischeck = false;
+            }
+            checkView.setSelected(ischeck);
+        }
+    }
+
+
+    class MyGrid extends BaseAdapter {
+
         @Override
         public int getCount() {
-            return homeCarstore.size();
+            return app.length;
         }
 
         @Override
         public Object getItem(int position) {
-            return null;
+            return position;
         }
 
         @Override
@@ -179,65 +293,63 @@ public class FindFragment extends Fragment {
         }
 
         @Override
-        public View getView(final int position, View convertView, ViewGroup parent) {
-
-            ViewHolder holderView = null;
+        public View getView(int position, View convertView, ViewGroup parent) {
+            ViewHolder viewHolder = null;
             if (convertView == null) {
-                convertView = LayoutInflater.from(context).inflate(R.layout.car_item, null);
-                holderView = new ViewHolder(convertView);
-                convertView.setTag(holderView);
+                convertView = View.inflate(getActivity(), R.layout.find_grid_item, null);
+                viewHolder = new ViewHolder(convertView);
+                convertView.setTag(viewHolder);
             } else {
-                holderView = (ViewHolder) convertView.getTag();
+                viewHolder = (ViewHolder) convertView.getTag();
             }
-            holderView.storeAddress.setText(homeCarstore.get(position).getBaddress());
-            holderView.storeName.setText(homeCarstore.get(position).getBname());
-            holderView.carOwner.setText("主营车型 : " + homeCarstore.get(position).getMajorbusiness());
-            if (!TextUtils.isEmpty(homeCarstore.get(position).getTitle1())) {
-                holderView.homeTitle1Text.setText(homeCarstore.get(position).getTitle1());
-            } else {
-                holderView.homeTitle1Ly.setVisibility(View.INVISIBLE);
-            }
-            if (!TextUtils.isEmpty(homeCarstore.get(position).getTitle2())) {
-                holderView.homeTitle2Text.setText(homeCarstore.get(position).getTitle2());
-            } else {
-                holderView.homeTitle2Ly.setVisibility(View.INVISIBLE);
-            }
+            viewHolder.textView.setText(app[position]);
+            viewHolder.imageView.setImageResource(app_ioc[position]);
+            switch (position) {
+                case 0:  //违章
+                    viewHolder.app_parent.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent();
+                            intent.setClass(getActivity(), Car.class);
+                            startActivity(intent);
+                        }
+                    });
+                    break;
+                case 1: //附近加油 直接调用地图api
+                    viewHolder.app_parent.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (!AppUtil.openMapByjiaYou(context, bdLocation.getLatitude() + "", bdLocation.getLongitude() + "", "加油站")) {
+                                //没有安装
+                                UIUtils.Toast("您没有安装地图App，暂时无法查询", false);// TODO: 16/11/29
+                            }
+                        }
+                    });
 
-            ImageLoad.loadImg(holderView.carImg, homeCarstore.get(position).getBshowImage());
-
+                    break;
+            }
             return convertView;
         }
-
-
     }
 
-    static class ViewHolder {
-        @BindView(R.id.car_img)
-        SimpleDraweeView carImg;
-        @BindView(R.id.store_name)
-        TextView storeName;
-        @BindView(R.id.store_address)
-        TextView storeAddress;
-        @BindView(R.id.car_owner)
-        TextView carOwner;
-        @BindView(R.id.distance)
-        TextView distance;
-        @BindView(R.id.car_location)
-        ImageView carLocation;
-        @BindView(R.id.car_call)
-        ImageView carCall;
-        @BindView(R.id.home_title1_text)
-        TextView homeTitle1Text;
-        @BindView(R.id.home_title1_ly)
-        LinearLayout homeTitle1Ly;
-        @BindView(R.id.home_title2_text)
-        TextView homeTitle2Text;
-        @BindView(R.id.home_title2_ly)
-        LinearLayout homeTitle2Ly;
+    class ViewHolder {
+        @BindView(R.id.app_title)
+        TextView textView;
+        @BindView(R.id.app_ioc)
+        ImageView imageView;
+        @BindView(R.id.app_parent)
+        LinearLayout app_parent;
 
-        ViewHolder(View view) {
-            ButterKnife.bind(this, view);
+        public ViewHolder(View b) {
+            ButterKnife.bind(this, b);
         }
     }
 
+    public void update() {
+        if (mRadioGroup_content != null && mRadioGroup_content.getChildCount() > 0) {
+            View localView = mRadioGroup_content.getChildAt(0);
+            newfragment.update(localView.getId());
+        }
+    }
 }
+

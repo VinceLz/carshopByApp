@@ -9,4 +9,20 @@
     <dimen name="footer_height">90dp</dimen>
     <dimen name="footer_padding">10dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="button_text_size">14sp</dimen>
+    <dimen name="expand_tab_item_height">45dp</dimen>
+    <dimen name="expand_tab_eara_height">380dp</dimen>
+    <dimen name="head_bar_height">45dp</dimen>
+
+    <!-- 字体大小 -->
+    <dimen name="title_text_size">20sp</dimen>
+    <dimen name="text_size_default">18sp</dimen>
+    <dimen name="text_size_index_home_title">16sp</dimen>
+
+    <!-- 间距 -->
+    <dimen name="normal_space">10dp</dimen>
+    <dimen name="little_sapce">5dp</dimen>
+
+    <!-- 高度 -->
+    <dimen name="normal_input_height">40dp</dimen>
 </resources>

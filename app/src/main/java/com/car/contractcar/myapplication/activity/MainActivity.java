@@ -159,13 +159,14 @@ public class MainActivity extends FragmentActivity {
                 if (findFragment == null) {
                     findFragment = new FindFragment();
                     ft.add(R.id.content, findFragment);
+                } else {
+                    findFragment.update();
                 }
                 iv_find.setImageResource(R.mipmap.bid07);
                 tv_find.setTextColor(Color.parseColor("#18B4ED"));
                 ft.show(findFragment);
                 break;
             case 3:
-
                 //我
                 if (meFragment == null) {
                     meFragment = new MeFragment();

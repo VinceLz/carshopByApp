@@ -36,6 +36,7 @@ import com.car.contractcar.myapplication.common.utils.UIUtils;
 import com.car.contractcar.myapplication.keepcar.bean.KeepCarShopInfo;
 import com.car.contractcar.myapplication.keepcar.bean.KeepHomeBean;
 import com.car.contractcar.myapplication.keepcar.view.KeepCarServiceInfoActivity;
+import com.car.contractcar.myapplication.keepcar.view.keepCarList;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.adapter.StaticPagerAdapter;
@@ -73,6 +74,9 @@ public class KeepcarFragment extends Fragment {
     private String dd;
     private BDLocation bdLocation;
 
+    @BindView(R.id.keep1)
+    LinearLayout keep1;
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -85,7 +89,6 @@ public class KeepcarFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         loadingPage = new LoadingPage(getActivity()) {
             @Override
             public int LayoutId() {
@@ -140,7 +143,14 @@ public class KeepcarFragment extends Fragment {
 
 
         keepcarViewPagesCarousel.setHintView(new ColorPointHintView(getActivity(), Color.WHITE, Color.parseColor("#aacccccc")));
-
+        keep1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //养车服务
+                Intent i = new Intent(getActivity(), keepCarList.class);
+                startActivity(i);
+            }
+        });
         keepcarList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -198,13 +208,10 @@ public class KeepcarFragment extends Fragment {
                     }
                 });
             }
-
-
             final List<KeepHomeBean.YcstoreBean> ycstore = keepHomeBean.getYcstore();
             if (ycstore != null && ycstore.size() > 0) {
                 keepcarList.setAdapter(new BaseAdapter() {
                     private int score;
-
                     @Override
                     public int getCount() {
                         return ycstore.size();

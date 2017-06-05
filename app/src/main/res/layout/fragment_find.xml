@@ -1,12 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <ListView
-        android:id="@+id/findtest"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-    </ListView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center|left"
+            android:text="附近服务"
+            android:textColor="@color/xingba"
+            android:textSize="25dp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/bg_Gray_light"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:scrollbars="none">
+
+        <com.car.contractcar.myapplication.common.ui.MyGridView
+            android:id="@+id/app"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:horizontalSpacing="5dp"
+            android:numColumns="4"
+            android:scrollbars="none"
+            android:verticalSpacing="5dp"></com.car.contractcar.myapplication.common.ui.MyGridView>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/bg_Gray_light"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#fff3f3f3"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rl_column"
+                android:layout_width="match_parent"
+                android:layout_height="40.0dip"
+                android:layout_weight="1.0"
+                android:background="@color/white">
+
+                <com.car.contractcar.myapplication.find.model.ColumnHorizontalScrollView
+                    android:id="@+id/mColumnHorizontalScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="40.0dip"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:id="@+id/mRadioGroup_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp" />
+                </com.car.contractcar.myapplication.find.model.ColumnHorizontalScrollView>
+
+                <ImageView
+                    android:id="@+id/shade_left"
+                    android:layout_width="10.0dip"
+                    android:layout_height="40.0dip"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/channel_leftblock"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/shade_right"
+                    android:layout_width="10.0dip"
+                    android:layout_height="40.0dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/channel_rightblock"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_more_columns"
+                android:layout_width="wrap_content"
+                android:layout_height="40.0dip"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/button_more_columns"
+                    android:layout_width="40.0dip"
+                    android:layout_height="40.0dip"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/channel_glide_day_bg" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/mViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 </LinearLayout>

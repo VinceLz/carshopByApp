@@ -8,8 +8,8 @@ android {
         applicationId "com.car.contractcar.myapplication"
         minSdkVersion 18
         targetSdkVersion 22
-        versionCode 8
-        versionName "8.1"
+        versionCode 10
+        versionName "10.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
             // 设置支持的SO库架构
@@ -41,7 +41,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:23.0.1'
+    // compile 'com.android.support:appcompat-v7:23.0.1'
     testCompile 'junit:junit:4.12'
     compile 'com.jakewharton:butterknife:8.4.0'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
@@ -49,7 +49,7 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.jude:rollviewpager:1.2.9'
     compile 'com.huxq17.xrefreshview:xrefreshview:3.5.5'
-    compile project(':library')
+    //    compile project(':library')
     compile 'org.xutils:xutils:3.3.38'
     compile 'hanks.xyz:htextview-library:0.1.1'
     compile 'de.hdodenhof:circleimageview:2.1.0'
@@ -64,5 +64,7 @@ dependencies {
     //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3
     compile files('libs/pinyin4android1.0.jar')
     compile files('libs/pinyin4j-2.5.0.jar')
+    compile 'com.flipboard:bottomsheet-core:1.5.1'
+    compile 'se.emilsjolander:stickylistheaders:2.7.0'
 }
 

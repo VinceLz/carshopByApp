@@ -185,6 +185,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 UIUtils.SpputString(Constant.USER_SP, jsonObject.getString("user"));
                                 Constant.USER = JSON.parseObject(jsonObject.getString("user"), User.class);
                                 //  UIUtils.startAnActivity(new Intent(LoginActivity.this, MainActivity.class), LoginActivity.this);
+                                Intent i = new Intent();
+                                i.putExtra("status", "yes");
+                                setResult(2, i);
                                 finish();
                             }
                         }
